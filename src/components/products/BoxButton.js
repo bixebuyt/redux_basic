@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toogleEdit, handleDelete } from './../../actions/index';
 class BoxButton extends Component {
-    constructor(props) {
-        super(props);
-    }
     handleDelete = (id) => {
         this.props.dispatch(handleDelete(id));
     }

@@ -36,9 +36,13 @@ var myReducers = (state = initialState, action) => {
                 ...state,toggleFormEdit:!state.toggleFormEdit
             }   
         case 'HANDLE_DELETE': 
-            console.log(action);
+            let idDelete = action.id;
+            let arrayProducts = state.arrayProducts;
+            let itemDelete = arrayProducts.filter(function(value, index) {
+                return value.id !== idDelete
+            })
             return {
-                ...state
+                ...state,arrayProducts: itemDelete
             } 
         default:
         return state

@@ -3,9 +3,6 @@ import Box from './Box';
 import BoxButton from './BoxButton';
 
 class Item extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <div className="item col-xs-4 col-sm-4 col-md-4 col-lg-4">        
