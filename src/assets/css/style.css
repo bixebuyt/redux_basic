@@ -1,0 +1,26 @@
+body {
+  background: #e7e7e7;
+  padding: 20px; }
+  body .item {
+    background: #fff;
+    border: 1px solid silver;
+    padding: 5px; }
+    body .item .box {
+      margin-bottom: 10px; }
+      body .item .box .box_img {
+        background: #E9F6FB;
+        padding: 5px; }
+      body .item .box .box_info {
+        padding-top: 15px; }
+        body .item .box .box_info .text-danger {
+          font-size: 20px; }
+    body .item .box_button {
+      padding: 10px 0px;
+      border-top: 1px solid silver; }
+      body .item .box_button .box_submit {
+        margin-top: 10px; }
+
+img {
+  max-width: 100%; }
+
+/*# sourceMappingURL=style.css.map */

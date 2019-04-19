@@ -1,0 +1,34 @@
+body {
+    background: #e7e7e7;
+    padding: 20px;
+    .item {
+        background: #fff;
+        border: 1px solid silver;
+        padding: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        .box {
+            margin-bottom: 10px;
+            .box_img {
+                background: #E9F6FB;
+                padding: 5px;
+            }
+            .box_info {
+                padding-top: 15px;
+                .text-danger {
+                    font-size: 20px;
+                }
+            }
+        }
+        .box_button {
+            padding: 10px 0px;
+            border-top: 1px solid silver;
+            .box_submit {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+img {
+    max-width: 100%;
+}
