@@ -1,29 +1,16 @@
 import React, { Component } from 'react';
 import Item from './Item';
 import FormAdd from './FormAdd';
+import { toogleForm } from './../../actions/index';
 import { connect } from 'react-redux';
 
 class Product extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sttFormAdd: false
-        }
-    }
     // toogle form add item //
-    toogleFormAdd = () => {
-        this.setState({
-            sttFormAdd: !this.state.sttFormAdd
-        })
-    }
-    // close form add item //
-    hanldeCloseFormAdd = () => {
-        this.setState({
-            sttFormAdd: false
-        })
+    toogleForm = () => {
+        this.props.dispatch(toogleForm())
     }
     // show list item product //
-    mappingItem = () => {
+    mappingItem = () => {        
         const mappingItem = this.props.arrayProducts.map((val, key) => {
             return <Item 
                     key={val.id}
@@ -37,10 +24,12 @@ class Product extends Component {
         return mappingItem;
     }
     render() {
-        let {sttFormAdd}= this.state;
+        let sttFormAdd = this.props.toogleForm;
         return (
             <div className="container">  
-                { (sttFormAdd)?<FormAdd hanldeCloseFormAdd={this.hanldeCloseFormAdd} />:<button type="button" onClick={this.toogleFormAdd} className="btn btn-success">Success</button> }
+                { (sttFormAdd)?
+                <FormAdd hanldeCloseFormAdd={this.hanldeCloseFormAdd} />:
+                         <button type="button" onClick={this.toogleForm} className="btn btn-success">Add Product</button> }
                 <div className="row">             
                     { this.mappingItem() }
                 </div>           
@@ -51,7 +40,8 @@ class Product extends Component {
 
 let mapStateToProps = (state) => {
     return {
-        arrayProducts: state.arrayProducts
+        arrayProducts: state.arrayProducts,
+        toogleForm: state.toogleForm
     }   
 }
 

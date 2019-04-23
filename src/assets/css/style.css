@@ -4,7 +4,9 @@ body {
   body .item {
     background: #fff;
     border: 1px solid silver;
-    padding: 5px; }
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
     body .item .box {
       margin-bottom: 10px; }
       body .item .box .box_img {
@@ -22,5 +24,8 @@ body {
 
 img {
   max-width: 100%; }
+
+.toogleformadd {
+  margin-bottom: 30px; }
 
 /*# sourceMappingURL=style.css.map */

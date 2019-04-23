@@ -1,4 +1,3 @@
-import action from './../actions/index';
 const uuidv4 = require('uuid/v4');
 
 var initialState = {
@@ -25,25 +24,38 @@ var initialState = {
             img: 'asset/images/img_1.png'
         }  
     ],
-    toggleFormEdit: false
+    toogleForm: false,
+    idEdit: ''
 }
   
 
 var myReducers = (state = initialState, action) => {
     switch (action.type) {
-        case 'TOOGLE_EDIT':
+        case 'TOOGLE_FROM':
             return {
-                ...state,toggleFormEdit:!state.toggleFormEdit
-            }   
+                ...state,toogleForm:!state.toogleForm
+            }
+        case 'HANDLE_ADD':
+            action.action.id = uuidv4();
+            return {
+                ...state,
+                arrayProducts: state.arrayProducts.concat(action.action)
+            }
         case 'HANDLE_DELETE': 
-            let idDelete = action.id;
             let arrayProducts = state.arrayProducts;
+            let idDelete = action.id;
             let itemDelete = arrayProducts.filter(function(value, index) {
                 return value.id !== idDelete
             })
             return {
                 ...state,arrayProducts: itemDelete
             } 
+        case 'HANDLE_EDIT':
+            // console.log(action.action);
+
+            return {
+                ...state,idEdit: action.action
+            }
         default:
         return state
     }

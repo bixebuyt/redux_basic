@@ -12,7 +12,7 @@ class Box extends Component {
                     <p className="text-muted">{this.props.ram}</p>
                     <p className="text-danger">{this.props.price}</p>
                     <div className="box_button text-center">
-                        <button type="button" className="btn btn-primary">Add To Cart</button>
+                        <button type="button" className="btn btn-primary">Add To Cart</button>&nbsp;
                         <button type="button" className="btn btn-danger">More Info</button>
                     </div>  
                 </div>
